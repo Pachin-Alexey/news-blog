@@ -1,0 +1,17 @@
+index:
+    path: /
+    defaults: { _controller: BlogBundle:Blog:blogViewAll }
+
+blog_view:
+    path: /blog/{id}
+    defaults: { _controller: BlogBundle:Blog:blogView }
+    requirements:
+        id: \d+
+
+blog_viewAll:
+    path: /blog
+    defaults: { _controller: BlogBundle:Blog:blogViewAll }
+
+blog_signin:
+    path: /signin
+    defaults: { _controller: BlogBundle:Page:signin }

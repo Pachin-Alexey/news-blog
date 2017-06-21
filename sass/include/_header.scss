@@ -1,0 +1,42 @@
+.block-logo
+{
+  background-color: $cce;
+ .side-logo
+ {
+   margin: 0 auto;
+   width: $desktop;
+   text-align: center;
+ }
+}
+
+#memu_main_menu
+{
+  background-color: $cde;
+  margin-top: 20px;
+  .type-menu
+  {
+    margin: 0 auto;
+    width: $desktop;
+  }
+  ul
+  {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    li
+    {
+      display: inline-block;
+      padding: 10px 20px;
+      a
+      {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: $title;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

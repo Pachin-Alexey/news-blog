@@ -1,0 +1,13 @@
+{% extends "BlogBundle::layout.html.twig" %}
+
+{% block page_title %}News Blog{% endblock %}
+
+{% block main %}
+    <div id="container blog-container">
+        <p><span class="text">{{ blog.title }}</span></p>
+        <p><span class="text">{{ blog.body }}</span></p>
+        <div class="field field_created">
+            <p><span class="text">{{ blog.created|date("d-m-Y H:i:s") }}</span></p>
+        </div>
+    </div>
+{% endblock %}

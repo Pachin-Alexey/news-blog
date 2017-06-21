@@ -1,0 +1,20 @@
+{% extends "BlogBundle::layout.html.twig" %}
+{% block page_title %}News Blog{% endblock %}
+{% block main %}
+    <div id="container blog-container">
+        {% for blog in blogs %}
+            <div class="blog blog_container">
+                <p><span class="text"><a href="{{ path('blog_view', {'id' : blog.id}) }}">{{ blog.title }}</a></span></p>
+                <p><span class="text">{{ blog.summary }}</span></p>
+                <div class="field field_created">
+                    <p><span class="text">{{ blog.created|date("d-m-Y H:i:s") }}</span></p>
+                </div>
+                <nav class="link-menu" role="navigation">
+                    <ul>
+                        <li class="read-more"><a href="{{ path('blog_view', { 'id' : blog.id}) }}">Read more</a></li>
+                    </ul>
+                </nav>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
