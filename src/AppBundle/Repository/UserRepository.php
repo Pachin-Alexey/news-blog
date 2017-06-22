@@ -7,9 +7,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
 use Doctrine\ORM\EntityRepository;
 
-class UserRepository extends EntityRepository implements UserProviderInterface
+class UserRepository extends EntityRepository implements UserLoaderInterface
 {
     public function loadUserByUsername($username)
     {
@@ -27,6 +28,7 @@ class UserRepository extends EntityRepository implements UserProviderInterface
             );
             throw new UsernameNotFoundException($message);
         }
+        
 
         return $user;
     }

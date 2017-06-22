@@ -15,4 +15,9 @@ class SecurityController extends Controller
             'error'         => $helper->getLastAuthenticationError(),
         ));
     }
+
+    public function adminAction()
+    {
+        return $this->render('BlogBundle:Security:admin.html.twig');
+    }
 }
