@@ -16,25 +16,29 @@ class DefaultUsers implements FixtureInterface
     {
 
         $user = new User();
-        $user->setUsername('peter');
-        $user->setEmail('peter@example.com');
-        $user->setIsActive(true);
-
+        $user->setUsername('peter@example.com');
+        $user->setFirstname('peter');
+        $user->setLastname('');
+        
         $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
         $password = $encoder->encodePassword('pen', $user->getSalt());
         $user->setPassword($password);
 
         $manager->persist($user);
         $manager->flush();
-/*-----*/
+
+        
+        
         $user = new User();
-        $user->setUsername('admin');
-        $user->setEmail('admin@example.com');
-        $user->setIsActive(true);
+        $user->setUsername('admin@example.com');
+        $user->setFirstname('admin');
+        $user->setLastname('');
+
         $user->setRoles(array('ROLE_ADMIN'));
         $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
         $password = $encoder->encodePassword('admin', $user->getSalt());
         $user->setPassword($password);
+
 
         $manager->persist($user);
         $manager->flush();

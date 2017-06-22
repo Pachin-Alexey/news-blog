@@ -19,7 +19,7 @@
                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                             <li><a href="{{ path("logout") }}">Logout</a></li>
                         {% else %}
-                            <li><a href="{{ path("blog_signin") }}">Register</a></li>
+                            <li><a href="{{ path("user_registration") }}">Register</a></li>
                             <li><a href="{{ path("login") }}">Login</a></li>
                         {% endif %}
                     </ul>

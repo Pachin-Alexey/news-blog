@@ -12,9 +12,9 @@ blog_viewAll:
     path: /blog
     defaults: { _controller: BlogBundle:Blog:blogViewAll }
 
-blog_signin:
-    path: /signin
-    defaults: { _controller: BlogBundle:Page:signin }
+user_registration:
+    path: /register
+    defaults: { _controller: BlogBundle:Registration:register }
 
 login:
     path: /login
@@ -29,3 +29,4 @@ logout:
 admin:
     path: /admin
     defaults: { _controller: BlogBundle:Security:admin }
+
