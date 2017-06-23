@@ -39,3 +39,7 @@ admin_blog_edit:
     defaults: { _controller: BlogBundle:Security:blogEdit }
     requirements:
         id: \d+
+
+admin_blog_add:
+    path: /admin/blog/add
+    defaults: { _controller: BlogBundle:Security:blogAdd }

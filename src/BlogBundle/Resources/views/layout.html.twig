@@ -22,6 +22,9 @@
                             <li><a href="{{ path("user_registration") }}">Register</a></li>
                             <li><a href="{{ path("login") }}">Login</a></li>
                         {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li><a href="{{ path("admin") }}">Admin panel</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

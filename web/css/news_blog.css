@@ -123,3 +123,40 @@ article .link-menu ul li {
 article .link-menu ul li a {
   text-decoration: none;
 }
+
+/* line 1, ../../sass/include/_form.scss */
+form {
+  background-color: #dedede;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+}
+/* line 7, ../../sass/include/_form.scss */
+form label {
+  display: block;
+}
+/* line 11, ../../sass/include/_form.scss */
+form input {
+  width: 100%;
+}
+/* line 15, ../../sass/include/_form.scss */
+form textarea {
+  width: 100%;
+}
+
+/* line 1, ../../sass/include/_pagination.scss */
+.pagination {
+  text-align: center;
+}
+/* line 4, ../../sass/include/_pagination.scss */
+.pagination ul {
+  padding: 0;
+  margin: 5px;
+}
+/* line 8, ../../sass/include/_pagination.scss */
+.pagination ul li {
+  padding: 0;
+  margin: 5px;
+  list-style-type: none;
+  display: inline-block;
+}

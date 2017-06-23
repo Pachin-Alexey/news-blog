@@ -1,0 +1,19 @@
+form
+{
+  background-color: $cde;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  label
+  {
+    display: block;
+  }
+  input
+  {
+    width: 100%;
+  }
+  textarea
+  {
+    width: 100%;
+  }
+}

@@ -17,8 +17,6 @@
             </div>
         {% endfor %}
     </div>
-
-    <div class="pagination">
-        {{ include('BlogBundle:Include:pagination.html.twig', { 'pagination': pagination }) }}
-    </div>
+    {{ include('BlogBundle:Include:pagination.html.twig', { 'pagination': pagination }) }}
 {% endblock %}
+
