@@ -15,20 +15,7 @@ class DefaultUsers implements FixtureInterface
     public function load(ObjectManager $manager)
     {
 
-        $user = new User();
-        $user->setUsername('peter@example.com');
-        $user->setFirstname('peter');
-        $user->setLastname('');
-        
-        $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
-        $password = $encoder->encodePassword('pen', $user->getSalt());
-        $user->setPassword($password);
 
-        $manager->persist($user);
-        $manager->flush();
-
-        
-        
         $user = new User();
         $user->setUsername('admin@example.com');
         $user->setFirstname('admin');
