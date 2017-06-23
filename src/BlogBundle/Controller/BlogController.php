@@ -4,6 +4,7 @@ namespace BlogBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends Controller
 {
@@ -30,21 +31,28 @@ class BlogController extends Controller
 
     }
 
-    public function blogViewAllAction()
+    public function blogViewAllAction(Request $request)
     {
         $em = $this->getDoctrine();
         $blogRepository = $em->getRepository("BlogBundle:Blog");
 
-        if($blogs = $blogRepository->findAll()) {
+        $totalBlog = $blogRepository->findAllBlogCount();
+
+        $page = $request->query->get("page") ? $request->query->get("page") : 1;
+        $blogs = $blogRepository->findBlog(["page" => $page]);
+
+            $pagination = [
+                "total" => array_shift($totalBlog),
+                "max_result" => 5,
+                "page"  => $page,
+                "url"  => "blog_viewAll"
+
+            ];
 
             return $this->render("BlogBundle:Blog:viewAll.html.twig", [
-                'blogs' => $blogs
+                'blogs' => $blogs,
+                'pagination' => $pagination
             ]);
-
-        } else {
-
-            return $this->redirectToRoute('index');
-        }
 
     }
 

@@ -30,3 +30,12 @@ admin:
     path: /admin
     defaults: { _controller: BlogBundle:Security:admin }
 
+admin_blog:
+    path: /admin/blog
+    defaults: { _controller: BlogBundle:Security:blog }
+
+admin_blog_edit:
+    path: /admin/blog/{id}/edit
+    defaults: { _controller: BlogBundle:Security:blogEdit }
+    requirements:
+        id: \d+

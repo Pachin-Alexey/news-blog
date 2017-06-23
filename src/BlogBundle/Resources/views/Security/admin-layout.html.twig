@@ -1,0 +1,49 @@
+{% extends "BlogBundle::layout.html.twig" %}
+
+        {% block main_menu %}
+            <div class="main-menu" id="memu_main_menu">
+                <div class="type-menu">
+                    <ul>
+                        <li><a href="{{ path("index") }}">Home</a></li>
+
+                        <li><a href="{{ path("admin_blog") }}">Edit News</a></li>
+                        {#
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <li><a href="{{ path("logout") }}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ path("user_registration") }}">Register</a></li>
+                            <li><a href="{{ path("login") }}">Login</a></li>
+                        {% endif %}
+                        #}
+                    </ul>
+                </div>
+            </div>
+        {% endblock %}
+
+
+
+
+    {% block content %}
+        <div class="main_container" id="main_container">
+            {% block side_title %}
+                <div class="page_title" id="page_title">
+                    <h1>{% block page_title %}{% endblock %}</h1>
+                </div>
+            {% endblock %}
+        <main>
+            <article class="blog">
+                {% block main %}
+                {% endblock %}
+            </article>
+        </main>
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+        <footer role="contentinfo">
+            <div class="block block-copyright">
+                Copyright &copy; 2017. All rights reserved.
+            </div>
+        </footer>
+
+    {% endblock %}

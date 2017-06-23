@@ -1,7 +1,7 @@
 {% extends "BlogBundle::layout.html.twig" %}
 {% block page_title %}News Blog{% endblock %}
 {% block main %}
-    <div id="container blog-container">
+    <div class="blog blog-view">
         {% for blog in blogs %}
             <div class="blog blog_container">
                 <p><span class="text"><a href="{{ path('blog_view', {'id' : blog.id}) }}">{{ blog.title }}</a></span></p>
@@ -16,5 +16,9 @@
                 </nav>
             </div>
         {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {{ include('BlogBundle:Include:pagination.html.twig', { 'pagination': pagination }) }}
     </div>
 {% endblock %}
